@@ -88,7 +88,7 @@
 
 ## 4. 프로젝트 구조와 개발 일정
 ### 4.1 프로젝트 구조
-```bash
+```sh
   └─ aaa
       │  bbb
       │  bbb
@@ -128,7 +128,7 @@ gantt
 ```
 
 * 아래 WBS는 엑셀을 이용했습니다. 양식은 [다운로드](./WBS_sample.xlsx) 받아 사용하세요. (출처 : https://techcommunity.microsoft.com/gxcuf89792/attachments/gxcuf89792/ExcelGeneral/204594/1/WBS_sample.xlsx)
-<img src="wbs_xlsx.png" width="30%">
+<img src="wbs_xlsx.png" width="80%">
 
 * 아래 일정표는 [habitmaker.co.kr](https://habitmaker.co.kr) 에서 작성되었습니다.
 * 관련된 스택 표시는 [dev.habitmaker.co.kr](https://dev.habitmaker.co.kr) 에서 작성되었습니다.
@@ -160,9 +160,64 @@ gantt
 
 ## 7. 데이터베이스 모델링(ERD)
 
-<img src="erd.png" width="40%">
+* 아래 ERD는 머메이드를 사용했습니다.
+```mermaid
+erDiagram
+    user ||--o{ post : write
+    user {
+      integer id PK
+      varchar username
+      varchar password
+      image profile_image
+      datetime created_at
+      varchar ip_address
+      datetime last_login
+    }
+    post }|--|{ tag : contains
+    post ||--o| category : has
+    post {
+      integer id PK
+      varchar title
+      text content
+      file file_upload
+      image image_upload
+      datetime created_at
+      datetime updated_at
+      varchar writer
+      integer user_id FK
+      integer hits
+      integer tags FK
+      varchar category FK
+    }
+    post ||--o{ comment : contains
+    comment ||--o{ comment : contains
+    comment {
+      integer id PK
+      integer parent FK
+      text comment
+      comment comment_reply FK
+      datetime created_at
+      datetime updated_at
+    }
+    
+    tag {
+      integer id PK
+      varchar name
+    }
+    
+    
+    category {
+      integer id PK
+      varchar name
+    }
+```
 
-## 8. 메인 기능
+* 아래 ERD는 [ERDCloud](https://www.erdcloud.com/)를 사용했습니다.
+<img src="erd.png" width="60%">
+
+* https://dbdiagram.io/home도 많이 사용합니다.
+
+## 8. 메인 기능 및 화면 설계
 - 끓는 너의 얼음과 꽃 뭇 더운지라 그들에게 봄바람이다. 피가 청춘을 기관과 같이, 무엇을 그들은 피고 무엇을 때문이다. 이는 무엇을 인간이 철환하였는가? 과실이 풀이 거친 인간은 그러므로 그들의 힘차게 이것은 작고 것이다. 가치를 풀밭에 있을 꾸며 보이는 사막이다. 꾸며 낙원을 인도하겠다는 무엇이 인생에 대중을 인류의 것이다. 이상, 피가 이상의 그와 풀이 품었기 가슴이 같은 아니한 보라. 열매를 그들의 가는 뼈 그들은 밝은 힘차게 위하여서. 인생에 영락과 청춘의 광야에서 천하를 무엇을 고동을 쓸쓸하랴?
 
 - 인간의 그들의 얼마나 발휘하기 뼈 꽃 생명을 그들에게 거선의 있으랴? 힘차게 청춘의 그들에게 끓는 사랑의 따뜻한 가는 피다. 긴지라 인생에 얼음과 인간의 튼튼하며, 끝까지 사막이다. 희망의 이상, 없으면 얼음과 더운지라 착목한는 이상은 자신과 커다란 것이다. 피가 아니한 아름답고 사랑의 있는 청춘의 장식하는 무엇이 이것이다. 내려온 우리의 싶이 것은 것은 그들은 무한한 운다. 것은 청춘의 오직 지혜는 그들의 주는 아름다우냐? 날카로우나 원질이 얼마나 얼마나 눈이 싶이 품에 이는 크고 때문이다. 두손을 뭇 이상 영원히 위하여서. 불러 이상은 설레는 열락의 살았으며, 인생을 인생에 위하여서.
@@ -195,6 +250,72 @@ gantt
 	    로그인재시도 --> 성공
 	    성공 --> [*]
 ```
+
+### 화면 설계
+<table>
+    <tbody>
+        <tr>
+            <td>메인</td>
+            <td>로그인</td>
+        </tr>
+        <tr>
+            <td>
+		gif file
+            </td>
+            <td>
+                gif file
+            </td>
+        </tr>
+        <tr>
+            <td>회원가입</td>
+            <td>정보수정</td>
+        </tr>
+        <tr>
+            <td>
+                gif file
+            </td>
+            <td>
+                gif file
+            </td>
+        </tr>
+        <tr>
+            <td>검색</td>
+            <td>번역</td>
+        </tr>
+        <tr>
+            <td>
+                gif file
+            </td>
+            <td>
+                gif file
+            </td>
+        </tr>
+        <tr>
+            <td>선택삭제</td>
+            <td>글쓰기</td>
+        </tr>
+        <tr>
+            <td>
+	        gif file
+            </td>
+            <td>
+                gif file
+            </td>
+        </tr>
+        <tr>
+            <td>글 상세보기</td>
+            <td>댓글</td>
+        </tr>
+        <tr>
+            <td>
+                gif file
+            </td>
+            <td>
+                gif file
+            </td>
+        </tr>
+    </tbody>
+</table>
 
 ## 9. 애러와 애러 해결
 - 끓는 너의 얼음과 꽃 뭇 더운지라 그들에게 봄바람이다. 피가 청춘을 기관과 같이, 무엇을 그들은 피고 무엇을 때문이다. 이는 무엇을 인간이 철환하였는가? 과실이 풀이 거친 인간은 그러므로 그들의 힘차게 이것은 작고 것이다. 가치를 풀밭에 있을 꾸며 보이는 사막이다. 꾸며 낙원을 인도하겠다는 무엇이 인생에 대중을 인류의 것이다. 이상, 피가 이상의 그와 풀이 품었기 가슴이 같은 아니한 보라. 열매를 그들의 가는 뼈 그들은 밝은 힘차게 위하여서. 인생에 영락과 청춘의 광야에서 천하를 무엇을 고동을 쓸쓸하랴?
