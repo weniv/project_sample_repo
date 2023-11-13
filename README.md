@@ -248,7 +248,7 @@ gantt
 <img src="habit.jpg" width="50%">
 <img src="blob.png" width="50%">
 
-## 5. 역활 분담
+## 5. 역힐 분담
 
 - 팀장 : 이호준
 - FE : 홍길동
