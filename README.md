@@ -22,6 +22,21 @@
 - 타 플랫폼에서도 활용할 수 있는 API Set 제공
 - 각 언어별 로그인 없이 실습이 바로 가능한 환경(google colab의 경우 학생들 이름으로 가입되어 있으면 작동하지 않음)
 
+### 1.3 팀 구성
+- 실제 사진을 업로드 하시길 권합니다.
+<table>
+	<tr>
+		<td>이호준</td>
+		<td>이호준</td>
+		<td>이호준</td>
+	</tr>
+ 	<tr>
+		<td><img src="my.png" width="100%"></td>
+		<td><img src="my.png" width="100%"></td>
+		<td><img src="my.png" width="100%"></td>
+	</tr>
+</table>
+
 ## 2. 개발 환경 및 배포 URL
 ### 2.1 개발 환경
 - Web Framework
@@ -146,12 +161,15 @@ gantt
 
 ## 6. 와이어프레임 / UI / BM
 
+### 6.1 와이어프레임
 - 아래 페이지별 상세 설명, 더 큰 이미지로 하나하나씩 설명 필요
 <img src="ui.png" width="60%">
 
 - 와이어 프레임은 디자인을 할 수 있다면 '피그마'를, 디자인을 할 수 없다면 '카카오 오븐'으로 쉽게 만들 수 있습니다.
 
-### 화면 설계
+### 6.2 화면 설계
+- 화면은 gif파일로 업로드해주세요.
+ 
 <table>
     <tbody>
         <tr>
@@ -196,10 +214,10 @@ gantt
         </tr>
         <tr>
             <td>
-	        <img src="ui3.png" width="40%">
+	        <img src="ui3.png" width="100%">
             </td>
             <td>
-                <img src="ui3.png" width="40%">
+                <img src="ui3.png" width="100%">
             </td>
         </tr>
         <tr>
@@ -208,10 +226,10 @@ gantt
         </tr>
         <tr>
             <td>
-                <img src="ui3.png" width="40%">
+                <img src="ui3.png" width="100%">
             </td>
             <td>
-                <img src="ui3.png" width="40%">
+                <img src="ui3.png" width="100%">
             </td>
         </tr>
     </tbody>
