@@ -214,29 +214,43 @@
 * 아래 일정표는 머메이드로 작성했습니다.
 ```mermaid
 gantt
-    dateFormat  YYYY-MM-DD
-    title       Django tutorial 
-    excludes    weekends
-    %% (`excludes` accepts specific dates in YYYY-MM-DD format, days of the week ("sunday") or "weekends", but not the word "weekdays".)
-
-    section 전체
-    요구사항 분석            :done,    des1, 2023-10-26, 0d
-    기능 분석            :done,    des1, 2023-10-26, 0d
-    데이터베이스 설계         :done,  des2, 2023-10-26, 0d
-    개발                   :done, des3, after des2, 7d
-    프레젠테이션             :active, des4, after des3, 2d
-
-    section  개발
-    회원가입 기능 구현        :done,    dev1, after des2, 0d
-    로그인 기능 구현           :done, 1d
-    게시글 CRUD 구현        :done,crit, 2d
-    게시글 검색 기능            :done,0d
-    회원 관련 추가 기능        :done,1d
-    댓글 기능                :done,1d
-    대댓글                   :done,12h
-    마크다운 기능            :done,12h
-    부가 기능                :done, 3h
-    메인페이지 및 테마 구현     :done,1d
+    title tutorial django
+    dateFormat YY-MM-DD
+    section 기획
+        글조회(R) :2023-10-26, 1d
+        글생성/수정/삭제(CUD) :2023-10-28, 1d
+        로그인 기능 :2023-10-31, 1d
+        검색 기능 :2023-10-31, 1d
+        상세뷰 추가 구성 :2023-11-4, 1d
+    section 디자인
+        리디자인 :2023-11-6, 1d
+    section FE
+        메인    :2023-10-27, 1d
+        글조회    :2023-10-27, 1d
+        글등록    :2023-10-29, 2d
+        글수정    :2023-10-29, 2d
+        글삭제    :2023-10-29, 2d
+        글검색    :2023-10-30, 1d
+        로그인/로그아웃 :2023-10-31, 1d
+        회원가입 페이지 :2023-11-1, 1d
+        인증 접근 권한 :2023-10-31, 3d
+        유저 추가 :2023-11-2, 1d
+        프로필 페이지 :2023-11-5, 1d
+        이미지, 조회수, 태그 추가 :2023-11-6, 1d
+        댓글 추가 :2023-11-6, 1d
+        리디자인 적용 :2023-11-7, 1d
+    section BE
+        메인    :2023-10-27, 1d
+        글조회    :2023-10-27, 1d
+        글등록    :2023-10-29, 2d
+        글수정    :2023-10-29, 2d
+        글삭제    :2023-10-29, 2d
+        글검색    :2023-10-30, 1d
+        로그인/로그아웃 :2023-10-31, 1d
+        회원가입 페이지 :2023-11-1, 1d
+        인증 접근 권한 :2023-10-31, 3d
+        이미지, 조회수, 태그 :2023-11-5, 2d
+        댓글 :2023-11-5, 2d
 ```
 
 * 아래 WBS는 엑셀을 이용했습니다. 양식은 [다운로드](./WBS_sample.xlsx) 받아 사용하세요. (출처 : https://techcommunity.microsoft.com/gxcuf89792/attachments/gxcuf89792/ExcelGeneral/204594/1/WBS_sample.xlsx)
