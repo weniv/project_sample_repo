@@ -31,9 +31,9 @@
 		<th>이호준</th>
 	</tr>
  	<tr>
-		<td><img src="my.png" width="100%"></td>
-		<td><img src="my.png" width="100%"></td>
-		<td><img src="my.png" width="100%"></td>
+		<td><img src="my.jpg" width="100%"></td>
+		<td><img src="my.jpg" width="100%"></td>
+		<td><img src="my.jpg" width="100%"></td>
 	</tr>
 </table>
 
@@ -48,7 +48,6 @@
 - https://www.studyin.co.kr/
 
 ### 2.3 URL 구조
-### 4.2 URL 구조
 - main
 
 | App       | URL                                        | Views Function    | HTML File Name                        | Note           |
@@ -103,16 +102,111 @@
 
 ## 4. 프로젝트 구조와 개발 일정
 ### 4.1 프로젝트 구조
-```sh
-  └─ aaa
-      │  bbb
-      │  bbb
-      │  
-      ├─bbb
-      │  │  bbb.py
-      │  │  bbb.py
-...중략...
-```
+📦tech_blog_for_developer  
+ ┣ 📂accounts  
+ ┃ ┣ 📂migrations  
+ ┃ ┣ 📂__pycache__  
+ ┃ ┣ 📜admin.py  
+ ┃ ┣ 📜apps.py  
+ ┃ ┣ 📜forms.py  
+ ┃ ┣ 📜models.py  
+ ┃ ┣ 📜tests.py  
+ ┃ ┣ 📜urls.py  
+ ┃ ┣ 📜views.py  
+ ┃ ┗ 📜__init__.py  
+ ┣ 📂blog  
+ ┃ ┣ 📂migrations  
+ ┃ ┣ 📂__pycache__  
+ ┃ ┣ 📜admin.py  
+ ┃ ┣ 📜apps.py  
+ ┃ ┣ 📜forms.py  
+ ┃ ┣ 📜models.py  
+ ┃ ┣ 📜tests.py  
+ ┃ ┣ 📜urls.py  
+ ┃ ┣ 📜views.py  
+ ┃ ┗ 📜__init__.py  
+ ┣ 📂board  
+ ┃ ┣ 📂migrations  
+ ┃ ┣ 📂__pycache__  
+ ┃ ┣ 📜admin.py  
+ ┃ ┣ 📜apps.py  
+ ┃ ┣ 📜forms.py  
+ ┃ ┣ 📜models.py  
+ ┃ ┣ 📜tests.py  
+ ┃ ┣ 📜urls.py  
+ ┃ ┣ 📜views.py  
+ ┃ ┗ 📜__init__.py  
+ ┣ 📂main  
+ ┃ ┣ 📂migrations  
+ ┃ ┣ 📂__pycache__  
+ ┃ ┣ 📜admin.py  
+ ┃ ┣ 📜apps.py  
+ ┃ ┣ 📜models.py  
+ ┃ ┣ 📜tests.py  
+ ┃ ┣ 📜urls.py  
+ ┃ ┣ 📜views.py  
+ ┃ ┗ 📜__init__.py  
+ ┣ 📂media  
+ ┃ ┣ 📂accounts  
+ ┃ ┣ 📂blog  
+ ┃ ┗ 📂board  
+ ┣ 📂static  
+ ┃ ┣ 📂assets  
+ ┃ ┃ ┣ 📂css  
+ ┃ ┃ ┃ ┣ 📂apps  
+ ┃ ┃ ┃ ┣ 📂authentication  
+ ┃ ┃ ┃ ┣ 📂components  
+ ┃ ┃ ┃ ┣ 📂dashboard  
+ ┃ ┃ ┃ ┣ 📂elements  
+ ┃ ┃ ┃ ┣ 📂forms  
+ ┃ ┃ ┃ ┣ 📂pages  
+ ┃ ┃ ┃ ┣ 📂tables  
+ ┃ ┃ ┃ ┣ 📂users  
+ ┃ ┃ ┣ 📂images  
+ ┃ ┃ ┃ ┣ 📂mockup_image  
+ ┃ ┃ ┣ 📂img  
+ ┃ ┃ ┗ 📂js  
+ ┃ ┣ 📂bootstrap  
+ ┃ ┃ ┣ 📂css  
+ ┃ ┃ ┗ 📂js  
+ ┃ ┗ 📂plugins  
+ ┣ 📂tech_blog  
+ ┃ ┣ 📂__pycache__  
+ ┃ ┣ 📜.env  
+ ┃ ┣ 📜asgi.py  
+ ┃ ┣ 📜settings.py  
+ ┃ ┣ 📜urls.py  
+ ┃ ┣ 📜wsgi.py  
+ ┃ ┗ 📜__init__.py  
+ ┣ 📂templates  
+ ┃ ┣ 📂accounts  
+ ┃ ┃ ┣ 📜login.html  
+ ┃ ┃ ┣ 📜password_change.html  
+ ┃ ┃ ┣ 📜profile.html  
+ ┃ ┃ ┣ 📜profile_edit.html  
+ ┃ ┃ ┣ 📜signup.html  
+ ┃ ┃ ┗ 📜user_list.html  
+ ┃ ┣ 📂blog  
+ ┃ ┃ ┣ 📜blog_base.html  
+ ┃ ┃ ┣ 📜post_detail.html  
+ ┃ ┃ ┣ 📜post_form.html  
+ ┃ ┃ ┣ 📜post_list.html  
+ ┃ ┃ ┗ 📜post_not_found.html  
+ ┃ ┣ 📂board  
+ ┃ ┃ ┣ 📜board_base.html  
+ ┃ ┃ ┣ 📜board_post_detail.html  
+ ┃ ┃ ┣ 📜board_post_form.html  
+ ┃ ┃ ┗ 📜board_post_list.html  
+ ┃ ┣ 📂main  
+ ┃ ┃ ┗ 📜index.html  
+ ┃ ┣ 📜404.html  
+ ┃ ┗ 📜base.html  
+ ┣ 📜CONVENTION.md  
+ ┣ 📜db.sqlite3  
+ ┣ 📜manage.py  
+ ┣ 📜README.md  
+ ┗ 📜requirements.txt  
+
 ### 4.1 개발 일정(WBS)
 * 아래 일정표는 머메이드로 작성했습니다.
 ```mermaid
