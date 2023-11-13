@@ -26,9 +26,9 @@
 - 실제 사진을 업로드 하시길 권합니다.
 <table>
 	<tr>
-		<td>이호준</td>
-		<td>이호준</td>
-		<td>이호준</td>
+		<th>이호준</th>
+		<th>이호준</th>
+		<th>이호준</th>
 	</tr>
  	<tr>
 		<td><img src="my.png" width="100%"></td>
