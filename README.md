@@ -1,4 +1,4 @@
-![image](https://github.com/weniv/project_sample_repo/assets/24273120/952d6457-b48c-4e70-bf27-102a8bae7624)# 지역기반 스터디 그룹 커뮤니티 서비스
+# 지역기반 스터디 그룹 커뮤니티 서비스
 - 테스트용 계정
   ```
   id : test@test.test
