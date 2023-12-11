@@ -165,7 +165,7 @@
 <img src="map.png" width="100%">
 - 머메이드를 이용해 시각화 할 수 있습니다.
 ```mermaid
-    sequenceDiagram
+sequenceDiagram
     actor A as client
     participant B as Web
     participant C as server
@@ -178,7 +178,7 @@
     else 정보가 없거나 정보가 틀렸을 경우
     C->>+B: False
     B->>+A: 로그인 실패
-    end
+end
 ```
 
 ## 4. 프로젝트 구조와 개발 일정
