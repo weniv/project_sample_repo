@@ -52,7 +52,7 @@
 ### 2.2 배포 URL
 - https://www.studyin.co.kr/
 
-### 2.3 URL 구조
+### 2.3 URL 구조(모놀리식)
 - main
 
 | App       | URL                                        | Views Function    | HTML File Name                        | Note           |
@@ -102,10 +102,84 @@
 | blog      | 'comment/<int:pk>/update/'                 | comment_update    | blog/comment_form.html                |댓글 업데이터 경로   |
 | blog      | 'comment/<int:pk>/delete/'                 | comment_delete    | blog/comment_<br>confirm_delete.html      |댓글 삭제 폼    |
 
+### 2.4 URL 구조(마이크로식)
+
+* views의 이름과 views에 믹스인 한 것이 있으면 함께 언급하면 좋습니다.
+
+|app:accounts|HTTP Method|설명|로그인 권한 필요|작성자 권한 필요|
+|:-|:-|:-|:-:|:-:|
+|signup/|POST|회원가입|||
+|login/|POST|로그인|||
+|logout/|POST|로그아웃|✅||
+|\<int:pk\>/|GET|프로필 조회|✅||
+|\<int:pk\>/|PUT|프로필 수정|✅|✅|
+|\<int:pk\>/|DELETE|회원 탈퇴|✅|✅|
+|status/|GET|로그인 상태 확인|||
+|token/refresh/|POST|만료 토큰 재발급|||
+<br>  
+
+|app:blog|HTTP Method|설명|로그인 권한 필요|작성자 권한 필요|
+|:-|:-|:-|:-:|:-:|
+|list/|GET|게시판 리스트| O ||
+|create/|POST|게시물 작성| O ||
+<br>
+
+|app:interview|HTTP Method|설명|로그인 권한 필요|작성자 권한 필요|
+|:-|:-|:-|:-:|:-:|
+|question/|POST|면접 문제 요청| O ||
+|grading/|POST|면접 문제 채점| O ||
+|total/|POST|면접 점수 통계| O ||
+<br>
+
+* 아래와 같이 표현할 수도 있습니다.
+
+| App       | Method        | URL                               | Views Class        | Note           |
+|-----------|---------------|-----------------------------------|------------------- |----------------|
+| blog  | GET   | '/blog/posts/'                         |   PostViewSet                 |게시글 목록 |
+| blog  | POST   | '/blog/posts/'                       |   PostViewSet                 |게시글 생성 / ChatGPT API 요청 |
+| blog  | GET   | '/blog/posts/{post_id}/'                |    PostViewSet       |게시글 상세보기 / 게시글 조회수 증가 |
+| blog  | PATCH   | '/blog/posts/{post_id}/'                  |   PostViewSet    |게시글 수정 |
+| blog  | DELETE   | '/blog/posts/{post_id}/'                   |  PostViewSet    |게시글 삭제 |
+| blog  | POST   | '/blog/posts/{post_id}/like/'                   |   PostViewSet    |게시글 좋아요 증가|
+| blog  | GET   | '/blog/posts/{post_id}/comments/'                   |   CommentViewSet    | 게시물의 댓글 목록 |
+| blog  | POST   | '/blog/posts/{post_id}/comments/'                   |   CommentViewSet    | 게시물의 댓글 생성 |
+| blog  | GET   | '/blog/posts/{post_id}/comments/{comment_id}/'       |   CommentViewSet    | 게시물의 특정 댓글 보기 |
+| blog  | PATCH   | '/blog/posts/{post_id}/comments/{comment_id}/'       |   CommentViewSet    | 게시물의 특정 댓글 수정 |
+| blog  | DELETE   | '/blog/posts/{post_id}/comments/{comment_id}/'       |   CommentViewSet    | 게시물의 특정 댓글 삭제 |
+<br>
+
+|URL|페이지 설명|GET|POST|PUT|DELETE|로그인 권한| 작성자 권한|
+|------|---|:---:|:---:|:---:|:---:|:---:|:---:|
+|/accounts/login|로그인| |✔️| | | | |
+|/accounts/logout|로그아웃| |✔️| | | | |
+|/accounts/signup|회원가입| |✔️| | | | |
+|/accounts/profile|프로필 <br> 프로필 수정 <br> 회원 탈퇴|✔️<br> <br> <br>| |✔️|<br><br>✔️|✔️ <br> ✔️ <br> ✔️|<br> ✔️ <br> ✔️
+|/accounts/token/refresh|토큰갱신| |✔️| | | | |
+|/board|게시글 목록 <br> 게시글 생성|✔️<br><br>|<br>✔️| | | <br> ✔️| |
+|/board/{postid}|게시글 상세 <br> 게시글 수정 <br> 게시글 삭제|✔️<br><br><br>| |✔️|<br><br>✔️| <br> ✔️ <br> ✔️ | <br> ✔️ <br> ✔️
+<br>
+
 ## 3. 요구사항 명세와 기능 명세
 - https://www.mindmeister.com/ 등을 사용하여 모델링 및 요구사항 명세를 시각화하면 좋습니다.
 - 이미지는 셈플 이미지입니다.
 <img src="map.png" width="100%">
+- 머메이드를 이용해 시각화 할 수 있습니다.
+```mermaid
+    sequenceDiagram
+    actor A as client
+    participant B as Web
+    participant C as server
+    A->>+B: 로그인 요청
+    B->>+A: 로그인 정보 요구
+    A->>+C: id pw 전달
+    alt 로그인 정보가 맞을 경우
+    C->>+B: access token, refresh token 전달
+    B->>+A: 로그인 성공
+    else 정보가 없거나 정보가 틀렸을 경우
+    C->>+B: False
+    B->>+A: 로그인 실패
+    end
+```
 
 ## 4. 프로젝트 구조와 개발 일정
 ### 4.1 프로젝트 구조
