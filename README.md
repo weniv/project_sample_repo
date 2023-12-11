@@ -164,21 +164,22 @@
 - 이미지는 셈플 이미지입니다.
 <img src="map.png" width="100%">
 - 머메이드를 이용해 시각화 할 수 있습니다.
+  
 ```mermaid
-sequenceDiagram
+    sequenceDiagram
     actor A as client
     participant B as Web
     participant C as server
     A->>+B: 로그인 요청
     B->>+A: 로그인 정보 요구
-    A->>+C: id pw 전달
-    alt 로그인 정보가 맞을 경우
+    A->>+C: id, pw 전달
+    alt 로그인 정보가 있고 로그인 정보가 맞을 시
     C->>+B: access token, refresh token 전달
     B->>+A: 로그인 성공
-    else 정보가 없거나 정보가 틀렸을 경우
+    else 로그인 정보가 없거나 정보가 맞지 않을시
     C->>+B: False
     B->>+A: 로그인 실패
-end
+    end
 ```
 
 ## 4. 프로젝트 구조와 개발 일정
