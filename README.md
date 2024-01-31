@@ -4,6 +4,7 @@
 - GitHub Project나 GitHub Wiki를 사용하시는 것도 좋습니다.
 - 스웨거와 같은 서비스를 이용할 경우 캡쳐된 이미지가 있어야 합니다.
 - Notion으로 WBS 등을 작성하였으면 노션 링크가 아니라 내용이나 캡쳐 이미지가 들어가도록 해주세요.(URL 이동 최소화)
+- sample repo 입니다. https://github.com/paullabkorea/github_blog
   
 # 지역기반 스터디 그룹 커뮤니티 서비스
 
