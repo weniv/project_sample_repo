@@ -1,10 +1,12 @@
 - 해당 repo는 sample repo입니다. 실제 사용되고 있는 repo가 아닙니다.
+- 해당 repo 내용으로 작성한 [sample repo](https://github.com/paullabkorea/github_blog) 링크입니다. 이 프로젝트는 실제 위니브에서 진행중인 프로젝트입니다.
 - 블러 처리되어 있는 이미지가 일부 있을 수 있습니다.
 - 모든 템플릿이 동일한 템플릿이 되지 않도록 적절한 수정이 필요합니다.
 - GitHub Project나 GitHub Wiki를 사용하시는 것도 좋습니다.
 - 스웨거와 같은 서비스를 이용할 경우 캡쳐된 이미지가 있어야 합니다.
 - Notion으로 WBS 등을 작성하였으면 노션 링크가 아니라 내용이나 캡쳐 이미지가 들어가도록 해주세요.(URL 이동 최소화)
-- sample repo 입니다. https://github.com/paullabkorea/github_blog
+- ChatGPT에게 머메이드로 요구하세요. 대부분 빠르게 만족할만한 퀄리티를 얻을 수 있습니다.
+
   
 # 지역기반 스터디 그룹 커뮤니티 서비스
 
